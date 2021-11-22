@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @Document("account")
@@ -18,5 +19,9 @@ public class AccountDao {
 	private AccountType type;
 	private String currencyName;
 	private BigDecimal amount;
+
+	// Only for Business:
+    private List<Integer> holders;
+    private List<Integer> signers;
 
 }
