@@ -1,12 +1,12 @@
-package com.nttdata.bootcamp.project1.accounts.infraestructure.repository;
+package com.nttdata.bootcamp.accountservice.infraestructure.repository;
 
+import com.nttdata.bootcamp.accountservice.domain.Account;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.nttdata.bootcamp.project1.accounts.application.model.AccountRepository;
-import com.nttdata.bootcamp.project1.accounts.domain.Account;
-import com.nttdata.bootcamp.project1.accounts.infraestructure.model.dao.AccountDao;
+import com.nttdata.bootcamp.accountservice.application.model.AccountRepository;
+import com.nttdata.bootcamp.accountservice.infraestructure.model.dao.AccountDao;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.project1.accounts.domain;
+package com.nttdata.bootcamp.accountservice.domain;
 
 import lombok.Data;
 

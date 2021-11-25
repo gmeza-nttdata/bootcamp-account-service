@@ -1,5 +1,7 @@
-package com.nttdata.bootcamp.project1.accounts.infraestructure.rest;
+package com.nttdata.bootcamp.accountservice.infraestructure.rest;
 
+import com.nttdata.bootcamp.accountservice.application.AccountOperations;
+import com.nttdata.bootcamp.accountservice.domain.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.nttdata.bootcamp.project1.accounts.application.AccountOperations;
-import com.nttdata.bootcamp.project1.accounts.domain.Account;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
@@ -23,7 +22,7 @@ import reactor.core.publisher.Mono;
 public class AccountController {
 	
 	@Autowired
-	AccountOperations accountOperations;
+    AccountOperations accountOperations;
 	
 	@GetMapping
 	public Flux<Account> get() {

@@ -1,14 +1,14 @@
-package com.nttdata.bootcamp.project1.accounts.infraestructure.mockRepository;
+package com.nttdata.bootcamp.accountservice.infraestructure.mockRepository;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.nttdata.bootcamp.project1.accounts.domain.AccountType;
+import com.nttdata.bootcamp.accountservice.domain.Account;
+import com.nttdata.bootcamp.accountservice.domain.AccountType;
 import org.springframework.stereotype.Component;
 
-import com.nttdata.bootcamp.project1.accounts.application.model.AccountRepository;
-import com.nttdata.bootcamp.project1.accounts.domain.Account;
+import com.nttdata.bootcamp.accountservice.application.model.AccountRepository;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

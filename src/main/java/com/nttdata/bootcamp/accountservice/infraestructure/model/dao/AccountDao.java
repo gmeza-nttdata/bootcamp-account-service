@@ -1,6 +1,6 @@
-package com.nttdata.bootcamp.project1.accounts.infraestructure.model.dao;
+package com.nttdata.bootcamp.accountservice.infraestructure.model.dao;
 
-import com.nttdata.bootcamp.project1.accounts.domain.AccountType;
+import com.nttdata.bootcamp.accountservice.domain.AccountType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 

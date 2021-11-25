@@ -1,10 +1,10 @@
-package com.nttdata.bootcamp.project1.accounts.application.impl;
+package com.nttdata.bootcamp.accountservice.application.impl;
 
+import com.nttdata.bootcamp.accountservice.application.AccountOperations;
+import com.nttdata.bootcamp.accountservice.domain.Account;
 import org.springframework.stereotype.Service;
 
-import com.nttdata.bootcamp.project1.accounts.application.AccountOperations;
-import com.nttdata.bootcamp.project1.accounts.application.model.AccountRepository;
-import com.nttdata.bootcamp.project1.accounts.domain.Account;
+import com.nttdata.bootcamp.accountservice.application.model.AccountRepository;
 
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
-public class AccountOperationsImpl implements AccountOperations{
+public class AccountOperationsImpl implements AccountOperations {
 	
 	private final AccountRepository repository;
 

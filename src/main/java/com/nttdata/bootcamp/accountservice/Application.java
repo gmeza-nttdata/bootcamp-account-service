@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.project1.accounts;
+package com.nttdata.bootcamp.accountservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.project1.accounts.domain;
+package com.nttdata.bootcamp.accountservice.domain;
 
 public enum AccountType {
     CURRENT, SAVINGS, FIXED_TERM

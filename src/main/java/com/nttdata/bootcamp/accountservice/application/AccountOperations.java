@@ -1,6 +1,6 @@
-package com.nttdata.bootcamp.project1.accounts.application;
+package com.nttdata.bootcamp.accountservice.application;
 
-import com.nttdata.bootcamp.project1.accounts.domain.Account;
+import com.nttdata.bootcamp.accountservice.domain.Account;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
