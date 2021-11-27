@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.accountservice.infraestructure.model.dao;
+package com.nttdata.bootcamp.accountservice.infrastructure.model.dao;
 
 import com.nttdata.bootcamp.accountservice.domain.AccountType;
 import org.springframework.data.annotation.Id;
@@ -18,7 +18,7 @@ public class AccountDao {
 	private Integer userId;
 	private AccountType type;
 	private String currencyName;
-	private BigDecimal amount;
+	private BigDecimal balance;
 
 	// Only for Business:
     private List<Integer> holders;

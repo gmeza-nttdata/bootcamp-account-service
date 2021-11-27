@@ -13,7 +13,7 @@ public class Account {
 	private Integer userId;
 	private AccountType type;
 	private String currencyName;
-	private BigDecimal amount;
+	private BigDecimal balance;
 
 	// Only for Business:
     private List<Integer> holders;

@@ -1,8 +1,8 @@
-package com.nttdata.bootcamp.accountservice.infraestructure.repository;
+package com.nttdata.bootcamp.accountservice.infrastructure.repository;
 
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
-import com.nttdata.bootcamp.accountservice.infraestructure.model.dao.AccountDao;
+import com.nttdata.bootcamp.accountservice.infrastructure.model.dao.AccountDao;
 
 public interface IAccountCrudRepository extends ReactiveCrudRepository<AccountDao, String>{
 

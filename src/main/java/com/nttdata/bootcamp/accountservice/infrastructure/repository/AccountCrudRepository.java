@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.accountservice.infraestructure.repository;
+package com.nttdata.bootcamp.accountservice.infrastructure.repository;
 
 import com.nttdata.bootcamp.accountservice.domain.Account;
 import org.springframework.beans.BeanUtils;
@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.nttdata.bootcamp.accountservice.application.model.AccountRepository;
-import com.nttdata.bootcamp.accountservice.infraestructure.model.dao.AccountDao;
+import com.nttdata.bootcamp.accountservice.infrastructure.model.dao.AccountDao;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -52,20 +52,12 @@ public class AccountCrudRepository implements AccountRepository{
 	
 	private Account mapAccountDaoToAccount(AccountDao accountDao) {
 		Account account = new Account();
-		/*account.setNumber(accountDao.getNumber());
-		account.setAccountType(accountDao.getAccountType());
-		account.setCurrencyName(accountDao.getCurrencyName());
-		account.setAmount(accountDao.getAmount());*/
 		BeanUtils.copyProperties(accountDao, account);
 		return account;
 	}
 	
 	private AccountDao mapAccountToAccountDao(Account account) {
 		AccountDao accountDao = new AccountDao();
-		/*accountDao.setNumber(account.getNumber());
-		accountDao.setAccountType(account.getAccountType());
-		accountDao.setCurrencyName(account.getCurrencyName());
-		accountDao.setAmount(account.getAmount());*/
 		BeanUtils.copyProperties(account, accountDao);
 		return accountDao;
 	}

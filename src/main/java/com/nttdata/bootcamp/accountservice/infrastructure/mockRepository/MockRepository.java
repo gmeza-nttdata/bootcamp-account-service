@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.accountservice.infraestructure.mockRepository;
+package com.nttdata.bootcamp.accountservice.infrastructure.mockRepository;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public class MockRepository implements AccountRepository{
 		liability.setNumber("123-0544581-0254");
 		liability.setType(AccountType.CURRENT);
 		liability.setCurrencyName("Soles");
-		liability.setAmount(BigDecimal.valueOf(25145.38));
+		liability.setBalance(BigDecimal.valueOf(25145.38));
 		return Mono.just(liability);
 	}
 

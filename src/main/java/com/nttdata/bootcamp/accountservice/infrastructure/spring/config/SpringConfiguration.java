@@ -1,6 +1,6 @@
-package com.nttdata.bootcamp.accountservice.infraestructure.spring.config;
+package com.nttdata.bootcamp.accountservice.infrastructure.spring.config;
 
-import com.nttdata.bootcamp.accountservice.infraestructure.repository.AccountCrudRepository;
+import com.nttdata.bootcamp.accountservice.infrastructure.repository.AccountCrudRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
