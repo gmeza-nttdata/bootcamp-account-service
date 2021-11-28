@@ -42,9 +42,9 @@ public class AccountController {
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Mono<ResponseEntity<Account>> post(@RequestBody Account entity) {
-		return operations.findNumber(entity.getNumber())
-				.switchIfEmpty(Mono.just(entity)
-						.flatMap(operations::create))
+		return Mono.just(entity)
+				.doOnNext(e -> e.setNumber(null))
+				.flatMap(operations::create)
 				.map(this::postResponse);
 	}
 
