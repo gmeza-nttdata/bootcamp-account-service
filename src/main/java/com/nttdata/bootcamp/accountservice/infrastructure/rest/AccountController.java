@@ -6,14 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -56,7 +49,17 @@ public class AccountController {
 				.defaultIfEmpty(ResponseEntity.notFound().build())
 				.onErrorReturn(ResponseEntity.badRequest().build());
 	}
-	
+
+	@PatchMapping(value = "/{number}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Mono<ResponseEntity<Account>> patch(@PathVariable String number, @RequestBody Account entity) {
+		return operations.findNumber(number)
+				.doOnNext(a -> a.setBalance(entity.getBalance()))
+				.flatMap(a -> operations.update(number, Mono.just(a)))
+				.map(this::postResponse)
+				.defaultIfEmpty(ResponseEntity.notFound().build())
+				.onErrorReturn(ResponseEntity.badRequest().build());
+	}
+
 	@DeleteMapping("/{number}")
 	public Mono<ResponseEntity<Void>> delete(@PathVariable String number) {
 		return operations.findNumber(number)
