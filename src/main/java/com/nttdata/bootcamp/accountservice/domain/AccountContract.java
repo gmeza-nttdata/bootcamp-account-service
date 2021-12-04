@@ -8,18 +8,30 @@ import java.math.BigDecimal;
 public class AccountContract {
 
     /** hasMaintenanceFee? */
-    private Boolean hasMaintenanceFee;
+    private Boolean hasMonthlyMaintenanceFee = Boolean.FALSE;
     /** maintenanceFee. */
-    private BigDecimal maintenanceFee;
-
-    /** hasMonthlyOperationLimit? */
-    private Boolean hasMonthlyOperationLimit;
-    /** monthlyOperationLimit. */
-    private BigDecimal monthlyOperationLimit;
+    private BigDecimal monthlyMaintenanceFee;
 
     /** hasDailyOperationLimit? */
-    private Boolean hasDailyOperationLimit;
+    private Boolean hasDailyTransactionLimit = Boolean.FALSE;
     /** dailyOperationLimit. */
-    private BigDecimal dailyOperationLimit;
+    private Integer dailyTransactionLimit;
+
+    private Boolean hasMinimumInitialBalance = Boolean.FALSE;
+    private BigDecimal minimumInitialBalance;
+
+    /** hasMonthlyOperationLimit? */
+    private Boolean hasMonthlyTransactionLimit = Boolean.FALSE;
+    /** monthlyOperationLimit. */
+    private Integer monthlyTransactionLimit;
+
+    /** Fee for transactions after limit. */
+    private BigDecimal transactionFeeAfterLimit;
+
+    /** Additional DailyAverageBalance */
+    private Boolean requiresDailyAverageBalance = Boolean.FALSE;
+    private BigDecimal dailyAverageBalanceLimit;
+
+
 
 }

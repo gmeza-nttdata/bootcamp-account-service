@@ -3,6 +3,7 @@ package com.nttdata.bootcamp.accountservice.infrastructure.rest;
 import com.nttdata.bootcamp.accountservice.application.AccountOperations;
 import com.nttdata.bootcamp.accountservice.domain.Account;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import reactor.core.publisher.Mono;
 
 import java.net.URI;
 
+@Slf4j
 @RestController
 @RequestMapping("/accounts")
 @RequiredArgsConstructor
@@ -35,6 +37,9 @@ public class AccountController {
 
 	@PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Mono<ResponseEntity<Account>> post(@RequestBody Account entity) {
+
+		log.info("Creating account: " + entity.toString());
+
 		return Mono.just(entity)
 				.doOnNext(e -> e.setNumber(null))
 				.flatMap(operations::create)

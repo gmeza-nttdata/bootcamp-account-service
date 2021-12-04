@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.nttdata.bootcamp.accountservice.domain.Account;
-import com.nttdata.bootcamp.accountservice.domain.AccountType;
 import org.springframework.stereotype.Component;
 
 import com.nttdata.bootcamp.accountservice.application.model.AccountRepository;
@@ -20,7 +19,6 @@ public class MockRepository implements AccountRepository{
 	public Mono<Account> getNumber(String number) {
 		Account liability = new Account();
 		liability.setNumber("123-0544581-0254");
-		liability.setType(AccountType.CURRENT);
 		liability.setCurrencyName("Soles");
 		liability.setBalance(BigDecimal.valueOf(25145.38));
 		return Mono.just(liability);

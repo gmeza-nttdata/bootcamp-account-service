@@ -14,7 +14,7 @@ public class Account {
 	/** main holder. */
 	private Integer userId;
 	/** account type. */
-	private AccountType type;
+	private String type;
 	/** Currency of the account. */
 	private String currencyName;
 	/** Current Account balance. */
